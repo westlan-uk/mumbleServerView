@@ -89,6 +89,7 @@ class ServerInterface
 
 		return $this->version;
 	}
+
 	public function getServer($srvid)
 	{
 		$server = $this->meta->getServer(intval($srvid));

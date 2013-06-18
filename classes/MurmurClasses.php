@@ -9,6 +9,7 @@ class MurmurServer
 		if ($iceObject==null) {
 			throw new Exception('Required iceObject parameter was null');
 		}
+
 		return new self($iceObject);
 	}
 
@@ -16,7 +17,6 @@ class MurmurServer
 	{
 		$this->iceObj = $iceObj;
 	}
-
 
 	public function getUsers()
 	{
@@ -77,7 +77,8 @@ class MurmurUser
 		*/
 	}
 
-	public function getName() {
+	public function getName() 
+	{
 		return $this->name;
 	}
 
@@ -151,14 +152,15 @@ class MurmurChannel
 	{
 		return $this->id;
 	}
+
 	public function getName()
 	{
 		return $this->name;
 	}
+
 	public function getParentChannelId()
 	{
 		return $this->parentId;
 	}
 }
-
 
