@@ -8,6 +8,17 @@ on GitHub: https://github.com/Kissaki/MumPI . This project is based on MumPI and
 but the code is intended to be much smaller, a read only viewer and an API for people to easily build
 their own viewers out of JavaScript, CSS and HTML5.
 
+Downloading
+===
+You can download mumbleServerView as a .ZIP file from GitHub.com.
+
+https://github.com/jamesread/mumbleServerView/archive/master.zip
+
+The repository is open. Patches welcome, please fork and raise a pull request.
+
+Issues (bugs, security issues, feature requests) are also very welcome. Please
+use the issue tracker on GitHub.com.
+
 Installation
 ===
 Simply create a settings.php file, using settings.default.php as a template. 
