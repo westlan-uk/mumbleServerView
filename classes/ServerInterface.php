@@ -18,7 +18,7 @@ class ServerInterface
 		return self::$instance;
 	}
 
-	function __construct()
+	public function __construct()
 	{
 		global $dbInterface_address;
 		global $dbInterface_icesecrets;
@@ -86,14 +86,17 @@ class ServerInterface
 			$this->meta->getVersion($major, $minor, $patch, $text);
 			$this->version = $major . '.' . $minor . '.' . $patch . ' ' . $text;
 		}
+
 		return $this->version;
 	}
 	public function getServer($srvid)
 	{
 		$server = $this->meta->getServer(intval($srvid));
+
 		if ($server != null && !empty($this->contextVars)) {
 			$server = $server->ice_context($this->contextVars);
 		}
+
 		return $server;
 	}
 }

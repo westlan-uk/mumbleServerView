@@ -1,4 +1,5 @@
 <?php
+
 class MurmurServer
 {
 	private $iceObj;
@@ -51,28 +52,28 @@ class MurmurUser
 		);
 
 		/*
-			$iceUser->session,
-			$iceUser->userid,
-			$iceUser->mute,
-			$iceUser->deaf,
-			$iceUser->suppress,
-			$iceUser->selfMute,
-			$iceUser->selfDeaf,
-			$iceUser->channel,
-			$iceUser->name,
-			$iceUser->onlinesecs,
-			$iceUser->bytespersec,
-			$iceUser->version,
-			$iceUser->release,
-			$iceUser->os,
-			$iceUser->osversion,
-			$iceUser->identity,
-			$iceUser->context,
-			$iceUser->comment,
-			MurmurNetAddress::fromIceObject($iceUser->address),
-			$iceUser->tcponly,
-			$iceUser->idlesecs,
-			isset($iceUser->prioritySpeaker)?$iceUser->prioritySpeaker:null
+		$iceUser->session,
+		$iceUser->userid,
+		$iceUser->mute,
+		$iceUser->deaf,
+		$iceUser->suppress,
+		$iceUser->selfMute,
+		$iceUser->selfDeaf,
+		$iceUser->channel,
+		$iceUser->name,
+		$iceUser->onlinesecs,
+		$iceUser->bytespersec,
+		$iceUser->version,
+		$iceUser->release,
+		$iceUser->os,
+		$iceUser->osversion,
+		$iceUser->identity,
+		$iceUser->context,
+		$iceUser->comment,
+		MurmurNetAddress::fromIceObject($iceUser->address),
+		$iceUser->tcponly,
+		$iceUser->idlesecs,
+		isset($iceUser->prioritySpeaker)?$iceUser->prioritySpeaker:null
 		*/
 	}
 

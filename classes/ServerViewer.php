@@ -1,7 +1,7 @@
 <?php
 
-require_once('classes/MurmurClasses.php');
-require_once('classes/ServerInterface.php');
+require_once 'classes/MurmurClasses.php';
+require_once 'classes/ServerInterface.php';
 
 class ServerViewer
 {
@@ -40,6 +40,7 @@ class ServerViewer
 
 		return $ret;
 	}
+
 	public static function getServer($serverId)
 	{
 		$ret = array();
