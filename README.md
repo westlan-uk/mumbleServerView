@@ -11,3 +11,7 @@ their own viewers out of JavaScript, CSS and HTML5.
 Installation
 ===
 Simply create a settings.php file, using settings.default.php as a template. 
+
+Your server needs the PHP Ice extension installed and loaded. Fedora and Debian 
+both include this package in the most recent versions. On Fedora the package is 
+called `php-ice`. 
