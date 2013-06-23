@@ -28,6 +28,17 @@ class MurmurServer
 		return $this->iceObj->getChannels();
 	}
 
+	public function getChannelName($id) 
+	{
+		foreach ($this->iceObj->getChannels() as $channel) {
+			if ($id == $channel->id) {
+				return $channel->name;
+			}
+		}
+
+		return '???';
+	}
+
 	public function getTree()
 	{
 		return MurmurTree::fromIceObject($this->iceObj->getTree(), $this);
@@ -42,7 +53,6 @@ class MurmurUser
 	public function __construct($name)
 	{
 		$this->name = $name;
-
 	}
 
 	public static function fromIceObject(Murmur_User $iceUser)
@@ -134,7 +144,7 @@ class MurmurTree
 
 		foreach ($this->getUsers() as $userObj) {
 			$user = array(
-				'username' => $userObj->getName(),
+				'username' => $userObj->getName()
 			);
 
 			$ret[] = $user;

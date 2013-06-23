@@ -29,13 +29,23 @@ class ServerViewer
 	}
 
 	public static function buildUserList($tree, array &$users = array()) {
-		$users = array_merge($users, $tree->getUserList());
+		$userlist = $tree->getUserList();
+
+		array_walk($userlist, array('ServerViewer', 'arrayPushAssoc'), array('channel', $tree->getRootChannel()->getName()));
+
+		$users = array_merge($users, $userlist);
 
 		foreach ($tree->getSubChannels() as $leaf) {
 			self::buildUserList($leaf, $users);
 		}
 
 		return $users;
+	}
+
+	public static function arrayPushAssoc(&$array, $key, $dat) 
+	{
+		$array[$dat[0]] = $dat[1];
+		return $array;
 	}
 
 	public static function getUserList($serverId)
