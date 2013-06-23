@@ -128,6 +128,20 @@ class MurmurTree
 	{
 		return $this->users;
 	}
+
+	public function getUserList() {
+		$ret = array();
+
+		foreach ($this->getUsers() as $userObj) {
+			$user = array(
+				'username' => $userObj->getName(),
+			);
+
+			$ret[] = $user;
+		}
+
+		return $ret;
+	}
 }
 
 class MurmurChannel

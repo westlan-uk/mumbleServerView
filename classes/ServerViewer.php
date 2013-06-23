@@ -7,20 +7,7 @@ class ServerViewer
 {
 	private static function buildChannelTree($tree) {
 		$ret = array();
-
-		$users = $tree->getUsers();
-
-		if (!empty($users)) {
-			$ret['users'] = array();
-
-			foreach ($users as $userObj) {
-				$user = array(
-					'username' => $userObj->getName(),
-				);
-
-				$ret['users'][] = $user;
-			}
-		}
+		$ret['users'] = $tree->getUserList();
 
 		$subchannels = $tree->getSubChannels();
 
@@ -41,16 +28,29 @@ class ServerViewer
 		return $ret;
 	}
 
+	public static function buildUserList($tree, array &$users = array()) {
+		$users = array_merge($users, $tree->getUserList());
+
+		foreach ($tree->getSubChannels() as $leaf) {
+			self::buildUserList($leaf, $users);
+		}
+
+		return $users;
+	}
+
+	public static function getUserList($serverId)
+	{
+		$server = ServerInterface::getInstance()->getServer($serverId);
+		$server = MurmurServer::fromIceObject($server);
+
+		return self::buildUserlist($server->getTree());
+	}
+
 	public static function getServer($serverId)
 	{
 		$ret = array();
 
 		$server = ServerInterface::getInstance()->getServer($serverId);
-
-		if ($server == null) {
-			throw new Exception('Server not found.');
-		}
-
 		$server = MurmurServer::fromIceObject($server);
 
 		$ret['tree'] = self::buildChannelTree($server->getTree());

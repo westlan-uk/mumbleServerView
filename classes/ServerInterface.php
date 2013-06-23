@@ -94,6 +94,10 @@ class ServerInterface
 	{
 		$server = $this->meta->getServer(intval($srvid));
 
+		if ($server == null) {
+			throw new Exception("Server not found.");
+		}
+
 		if ($server != null && !empty($this->contextVars)) {
 			$server = $server->ice_context($this->contextVars);
 		}
