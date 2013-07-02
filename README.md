@@ -10,6 +10,10 @@ their own viewers out of JavaScript, CSS and HTML5.
 
 Homepage: https://github.com/jamesread/mumbleServerView
 
+| Screenshots
+|:------------
+| ![An example of mumbleServerView being embedded in to a web page](https://github.com/jamesread/mumbleServerView/raw/master/resources/images/screenshot.png "mumbleServerView")
+
 Downloading
 ===
 You can download mumbleServerView as a .ZIP file from GitHub.com.
