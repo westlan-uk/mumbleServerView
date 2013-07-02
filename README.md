@@ -12,7 +12,8 @@ Homepage: https://github.com/jamesread/mumbleServerView
 
 | Screenshots
 |:------------
-| ![An example of mumbleServerView being embedded in to a web page](https://github.com/jamesread/mumbleServerView/raw/master/resources/images/screenshot.png "mumbleServerView") |  An example of mumbleServerView being embedded in to a web page 
+| ![An example of mumbleServerView being embedded in to a web page](https://github.com/jamesread/mumbleServerView/raw/master/resources/images/screenshot.png "mumbleServerView") 
+| An example of mumbleServerView being embedded in to a web page. Note that the description starting "Mumble is an open source..." is page of the page, not part of mumbleServerView. The style of mumbleServerView also integrates with the CSS on your page (in this example http://www.westlan.co.uk ).
 
 Downloading
 ===
