@@ -1,4 +1,3 @@
-
 function drawTree(data) {
 	var drawInto = $('.mumbleServerView');
 
@@ -31,6 +30,8 @@ function drawBranch(container, tree) {
 }
 
 function refreshTree(serverId) {
+	$.get("ajax.getServerTree.php", {"serverId": serverId}, drawTree);
+	
 }
 
 $(document).ready(function(){
