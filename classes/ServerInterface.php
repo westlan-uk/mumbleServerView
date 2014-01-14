@@ -1,6 +1,8 @@
 <?php
 
-require_once 'settings.php';
+if (!@include_once 'settings.php') {
+	throw new Exception('Could not include settings.php, this probably means that you have not copied settings.default.php to settings.php, so the settings.php file does not exist.');
+}
 
 class ServerInterface
 {
@@ -24,7 +26,7 @@ class ServerInterface
 		global $dbInterface_icesecrets;
 
 		// Check that the PHP Ice extension is loaded.
-		if (!extension_loaded('ice')) {
+		if (!extension_loaded('icie')) {
 			throw new Exception("No ICE extension loaded.");
 		} else {
 			$this->contextVars = $dbInterface_icesecrets;
