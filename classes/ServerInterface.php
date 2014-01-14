@@ -92,12 +92,13 @@ class ServerInterface
 		return $this->version;
 	}
 
-	public function getServer($srvid)
+	public function getServer($serverId)
 	{
-		$server = $this->meta->getServer(intval($srvid));
+		$serverId = intval($serverId);
+		$server = $this->meta->getServer($serverId);
 
 		if ($server == null) {
-			throw new Exception("Server not found.");
+			throw new Exception('Server not found with server ID: ' . $serverId);
 		}
 
 		if ($server != null && !empty($this->contextVars)) {
