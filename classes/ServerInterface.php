@@ -26,7 +26,7 @@ class ServerInterface
 		global $dbInterface_icesecrets;
 
 		// Check that the PHP Ice extension is loaded.
-		if (!extension_loaded('icie')) {
+		if (!extension_loaded('ice')) {
 			throw new Exception("No ICE extension loaded.");
 		} else {
 			$this->contextVars = $dbInterface_icesecrets;
